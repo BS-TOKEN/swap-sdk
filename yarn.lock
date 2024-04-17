@@ -1760,6 +1760,8 @@ asn1@~0.2.3:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.4.tgz#8d2475dfab553bb33e77b54e59e880bb8ce23136"
   integrity sha512-jxwzQpLQjSmWXgwaCZE9Nz+glAG01yF1QnWgbhGwHI5A6FRIEY6IVqtHhIepHqI7/kyEyQEagBC5mBEFlIYvdg==
+  dependencies:
+    safer-buffer "~2.1.0"
 
 assert-plus@1.0.0, assert-plus@^1.0.0:
   version "1.0.0"
@@ -2617,16 +2619,21 @@ domexception@^1.0.1:
   dependencies:
     webidl-conversions "^4.0.2"
 
-"dxswap-core@https://github.com/1Hive/dxswap-core.git", "dxswap-core@https://github.com/1Hive/dxswap-core.git#master":
+"dxswap-core@https://github.com/1Hive/dxswap-core.git":
   version "0.3.6"
-  uid "5fc22e0655d9574590fe56527e1651cecd118891"
   resolved "https://github.com/1Hive/dxswap-core.git#5fc22e0655d9574590fe56527e1651cecd118891"
   dependencies:
     typescript "^3.9.5"
 
-"dxswap-periphery@https://github.com/1Hive/dxswap-periphery.git#master":
+"dxswap-core@https://github.com/BS-TOKEN/swap-core.git":
+  version "0.3.6"
+  resolved "https://github.com/BS-TOKEN/swap-core.git#a8feb1d5faf54ba13af705892b93703a276dd2da"
+  dependencies:
+    typescript "^3.9.5"
+
+"dxswap-periphery@https://github.com/BS-TOKEN/swap-periphery.git":
   version "0.3.7"
-  resolved "https://github.com/1Hive/dxswap-periphery.git#12d46ea4c092aaf29aa36e47ca23c5965e7f6506"
+  resolved "https://github.com/BS-TOKEN/swap-periphery.git#4efafb2c8c7cd6d97190eb6426b623d6e802f425"
   dependencies:
     dxswap-core "https://github.com/1Hive/dxswap-core.git"
 

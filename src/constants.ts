@@ -102,7 +102,7 @@ export const INIT_CODE_HASH: { [chainId: number]: string } = {
   [ChainId.ARBITRUM_TESTNET_V3]: '0xd306a548755b9295ee49cc729e13ca4a45e00199bbd890fa146da43a50571776', // Swapr
   [ChainId.SOKOL]: '0xd306a548755b9295ee49cc729e13ca4a45e00199bbd890fa146da43a50571776', // Swapr
   [ChainId.XDAI]: '0x3f88503e8580ab941773b59034fb4b2a63e86dbc031b3633a925533ad3ed2b93', // Honeyswap
-  [ChainId.MATIC]: '0xae81bbc68f315fbbf7617eb881349af83b1e95241f616966e1e0583ecd0793fe' // Honeyswap
+  [ChainId.MATIC]: '0xae81bbc68f315fbbf7617eb881349af83b1e95241f616966e1e0583ecd0793fe', // Honeyswap
   [ChainId.TESTBSTC]: '0x63c52921df830fc505703646b11b5221d795993ba352f631679a51e92087ffcc' // Honeyswap
 }
 
