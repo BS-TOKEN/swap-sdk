@@ -1,7 +1,7 @@
-import JSBI from 'jsbi'
+import JSBI from 'jsbi';
 
-import { ChainId, SolidityType } from '../constants'
-import { validateSolidityTypeInstance } from '../utils'
+import { ChainId, SolidityType } from '../constants';
+import { validateSolidityTypeInstance } from '../utils';
 
 /**
  * A currency is any fungible financial instrument on the target chain.
@@ -10,19 +10,20 @@ import { validateSolidityTypeInstance } from '../utils'
  * SPOA for the Sokol testnet and xDAI for xDAI.
  */
 export class Currency {
-  public readonly decimals: number
-  public readonly symbol?: string
-  public readonly name?: string
+  public readonly decimals: number;
+  public readonly symbol?: string;
+  public readonly name?: string;
 
   // fiat currencies used to represent countervalues
-  public static readonly USD: Currency = new Currency(18, 'USD', 'US dollar')
+  public static readonly USD: Currency = new Currency(18, 'USD', 'US dollar');
 
   // Native currencies for deployment chains
-  public static readonly ETHER: Currency = new Currency(18, 'ETH', 'Ether')
-  public static readonly SPOA: Currency = new Currency(18, 'SPOA', 'Sokol POA')
-  public static readonly XDAI: Currency = new Currency(18, 'XDAI', 'xDAI')
-  public static readonly MATIC: Currency = new Currency(18, 'MATIC', 'MATIC')
-  public static readonly TESTBSTC: Currency = new Currency(18, 'TESTBSTC', 'TESTBSTC')
+  public static readonly ETHER: Currency = new Currency(18, 'ETH', 'Ether');
+  public static readonly SPOA: Currency = new Currency(18, 'SPOA', 'Sokol POA');
+  public static readonly XDAI: Currency = new Currency(18, 'XDAI', 'xDAI');
+  public static readonly MATIC: Currency = new Currency(18, 'MATIC', 'MATIC');
+  public static readonly TESTBSTC: Currency = new Currency(18, 'TESTBSTC', 'TESTBSTC');
+  public static readonly BSTC: Currency = new Currency(18, 'BSTC', 'BSTC');
 
   private static readonly NATIVE_CURRENCY: { [chainId in ChainId]: Currency } = {
     [ChainId.MAINNET]: Currency.ETHER,
@@ -31,8 +32,9 @@ export class Currency {
     [ChainId.SOKOL]: Currency.SPOA,
     [ChainId.XDAI]: Currency.XDAI,
     [ChainId.MATIC]: Currency.MATIC,
-    [ChainId.TESTBSTC]: Currency.TESTBSTC
-  }
+    [ChainId.TESTBSTC]: Currency.TESTBSTC,
+    [ChainId.BSTC]: Currency.BSTC
+  };
 
   /**
    * Constructs an instance of the base class `Currency`. The only instance of the base class `Currency` is `Currency.ETHER`.
@@ -41,26 +43,27 @@ export class Currency {
    * @param name of the currency
    */
   protected constructor(decimals: number, symbol?: string, name?: string) {
-    validateSolidityTypeInstance(JSBI.BigInt(decimals), SolidityType.uint8)
+    validateSolidityTypeInstance(JSBI.BigInt(decimals), SolidityType.uint8);
 
-    this.decimals = decimals
-    this.symbol = symbol
-    this.name = name
+    this.decimals = decimals;
+    this.symbol = symbol;
+    this.name = name;
   }
 
   public static isNative(currency: Currency): boolean {
-    return Object.values(Currency.NATIVE_CURRENCY).indexOf(currency) >= 0
+    return Object.values(Currency.NATIVE_CURRENCY).indexOf(currency) >= 0;
   }
 
   public static getNative(chainId: ChainId): Currency {
-    return Currency.NATIVE_CURRENCY[chainId]
+    return Currency.NATIVE_CURRENCY[chainId];
   }
 }
 
-export const USD = Currency.USD
+export const USD = Currency.USD;
 
-export const ETHER = Currency.ETHER
-export const SPOA = Currency.SPOA
-export const XDAI = Currency.XDAI
-export const MATIC = Currency.MATIC
-export const TESTBSTC = Currency.TESTBSTC
+export const ETHER = Currency.ETHER;
+export const SPOA = Currency.SPOA;
+export const XDAI = Currency.XDAI;
+export const MATIC = Currency.MATIC;
+export const TESTBSTC = Currency.TESTBSTC;
+export const BSTC = Currency.BSTC;
