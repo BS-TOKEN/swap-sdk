@@ -40,7 +40,8 @@ const TOKEN_LOGO_URI_CACHE: {
   [ChainId.ARBITRUM_TESTNET_V3]: {},
   [ChainId.RINKEBY]: {},
   [ChainId.MATIC]: {},
-  [ChainId.TESTBSTC]: {}
+  [ChainId.TESTBSTC]: {},
+  [ChainId.BSTC]: {}
 }
 
 /**
@@ -377,7 +378,8 @@ export abstract class Fetcher {
       [1, 'https://tokens.coingecko.com/uniswap/all.json'],
       [100, 'https://tokens.honeyswap.org'],
       [137, 'https://tokens.honeyswap.org'],
-      [5005, 'https://tokens.coingecko.com/uniswap/all.json']
+      [5005, 'https://tokens.coingecko.com/uniswap/all.json'],
+      [7007, 'https://tokens.coingecko.com/uniswap/all.json']
     ])
 
     // const tokenRegistryContract = new Contract(TOKEN_REGISTRY_ADDRESS[chainId], TokenRegistryAbi, provider)
