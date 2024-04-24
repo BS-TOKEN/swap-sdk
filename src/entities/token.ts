@@ -59,18 +59,15 @@ export class Token extends Currency {
       18,
       'WETH',
       'Wrapped Ether on TestBSTC'
-    ),
-    [ChainId.BSTC]: new Token(
-      ChainId.BSTC,
-      '0x73F379B9089825180C16f6dA7716944f835e33E8',
-      18,
-      'WETH',
-      'Wrapped Ether on BSTC'
     )
   };
 
   public static readonly WSPOA: { [key: number]: Token; } = {
     [ChainId.SOKOL]: new Token(ChainId.SOKOL, '0xc655c6D80ac92d75fBF4F40e95280aEb855B1E87', 18, 'WSPOA', 'Wrapped SPOA')
+  };
+
+  public static readonly WBSTC: { [key: number]: Token; } = {
+    [ChainId.BSTC]: new Token(ChainId.BSTC, '0x73F379B9089825180C16f6dA7716944f835e33E8', 18, 'WBSTC', 'Wrapped BSTC')
   };
 
   public static readonly WXDAI: { [key: number]: Token; } = {
@@ -101,7 +98,7 @@ export class Token extends Currency {
     [ChainId.XDAI]: Token.WXDAI[ChainId.XDAI],
     [ChainId.MATIC]: Token.WMATIC[ChainId.MATIC],
     [ChainId.TESTBSTC]: Token.WMATIC[ChainId.TESTBSTC],
-    [ChainId.BSTC]: Token.WETH[ChainId.BSTC]
+    [ChainId.BSTC]: Token.WBSTC[ChainId.BSTC],
   };
 
   public constructor(chainId: ChainId, address: string, decimals: number, symbol?: string, name?: string) {
@@ -164,3 +161,4 @@ export const WSPOA = Token.WSPOA;
 export const DXD = Token.DXD;
 export const WXDAI = Token.WXDAI;
 export const WMATIC = Token.WMATIC;
+export const WBSTC = Token.WBSTC;
